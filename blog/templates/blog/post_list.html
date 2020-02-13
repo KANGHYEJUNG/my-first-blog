@@ -1,20 +1,11 @@
-<html>
-    <head>
-        <title>나의 첫번째 블로그</title>
-    </head>
-    <body>
-        <div>
-            <h1><a href="">혜정쓰의 블로그입니당</a></h1>
-        </div>
+<div>
+    <h1><a href="/">Django Girls Blog</a></h1>
+</div>
 
-        <div>
-            <h2><a href="">My first post</a></h2>
-            <p> 장고 재밌네 ㅎㅎ 신기방기하다</p>
-        </div>
-
-        <div>
-            <h2><a href="">My second post</a></h2>
-            <p> 열심히 삽시다 아자아자</p>
-        </div>
-    </body>
-</html>
+{% for post in posts %}
+    <div>
+        <p>published: {{ post.published_date }}</p>
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+{% endfor %}
